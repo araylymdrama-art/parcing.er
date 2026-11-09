@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="kk"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#2563eb"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes">
+<link rel="manifest" href="manifest.json"><link rel="icon" href="icons/icon-192.png"><link rel="apple-touch-icon" href="icons/icon-192.png">
+<title>Smart Parking Simulator</title>
+<link rel="stylesheet" href="style.css"></head><body>
+<h1>🅿️ Smart Parking Simulator</h1>
+<p class="s">Ақылды автотұрақ: кіру/шығу, брондау, арнайы орындар, кезек және екі стратегияны салыстыру</p>
+
+<div class="card">
+ <div class="row">
+  <select id="strat"><option value="near">Ең жақын орын</option><option value="bal">Жүктемені теңестіру</option></select>
+  <select id="scn"><option>20</option><option selected>50</option><option>100</option></select>
+  <button class="p" id="run">▶ Бастау</button><button id="pause">⏸ Тоқтату</button><button id="reset">↺ Қайта</button>
+  <label>Жылдамдық <select id="spd"><option value="1">×1</option><option value="2" selected>×2</option><option value="5">×5</option><option value="12">×12</option></select></label>
+ </div>
+ <div class="row" style="margin-top:8px">
+  <button id="addN">🚗 Көлік</button><button id="addD">♿ Мүгедек көлігі</button><button id="addE">⚡ Электромобиль</button>
+  <button id="test">🧪 Брондау мерзімін тексеру</button>
+ </div>
+ <div class="stats" id="stats"></div>
+</div>
+
+<div class="card">
+ <div id="view"></div>
+ <div class="row" style="margin-top:8px"><button id="cIso">🎥 Бұрыш</button><button id="cTop">⬆ Жоғарыдан</button><button id="cGate">🚧 Кіреберіс</button><button id="night">🌙 Түн</button></div>
+ <div class="leg lg"><span><i style="background:var(--free)"></i>бос</span><span><i style="background:var(--tk)"></i>бос емес</span><span><i style="background:var(--rs)"></i>брондалған</span><span><i style="background:var(--D)"></i>♿ арнайы</span><span><i style="background:var(--E)"></i>⚡ зарядтау</span><span>Сүйреп айналдырыңыз, дөңгелекпен масштабтаңыз (телефонда екі саусақпен). Бос орынды басып 15 тактке брондаңыз</span></div>
+</div>
+
+<div class="cols">
+ <div class="card"><b>Кезек пен оқиғалар</b><div class="leg" id="qv"></div><div id="log"></div></div>
+ <div class="card"><b>Стратегияларды салыстыру</b>
+  <div class="row" style="margin:6px 0"><button class="p" id="cmp">📊 Салыстыру</button><span class="leg">5 кездейсоқ сынақтың орташасы</span></div>
+  <div class="sc"><table id="tbl"></table></div></div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script><script src="app.js"></script></body></html>
